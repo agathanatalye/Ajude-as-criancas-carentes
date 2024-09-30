@@ -1,0 +1,169 @@
+
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this template
+-->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajude as Crianças Carentes</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e0f7fa;
+            color: #333;
+            text-align: center;
+        }
+        header {
+            background-color: #d81b60; /* Rosa */
+            color: white;
+            padding: 30px 0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        .container {
+            width: 80%;
+            max-width: 800px;
+            margin: 40px auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        h2, h3 {
+            color: #8e24aa; /* Roxo */
+            font-family: 'Georgia', serif; /* Font mais elegante */
+        }
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin: 15px 0;
+        }
+        input, button {
+            padding: 10px;
+            margin: 10px 0;
+            width: calc(100% - 22px);
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+        .btn-doar {
+            background-color: #42a5f5; /* Azul */
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s;
+        }
+        .btn-doar:hover {
+            background-color: #1e88e5; /* Azul mais escuro */
+        }
+        .info-container {
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            margin-top: 20px;
+            border: 2px solid #d81b60; /* Rosa */
+        }
+        .important-link {
+            color: #d81b60; /* Rosa */
+            font-size: 18px;
+            text-decoration: underline;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Ajude as Crianças Carentes</h1>
+</header>
+
+<div class="container">
+    <h2>Transforme Vidas com Sua Generosidade!</h2>
+    <p>Com apenas R$ 10, você pode garantir refeições, materiais escolares e oportunidades para crianças que precisam de apoio. Sua contribuição pode mudar o futuro de muitos!</p>
+    
+    <h3>Informações para Doação</h3>
+    <input type="text" id="name" placeholder="Nome" required>
+    <input type="number" id="age" placeholder="Idade" required>
+    <input type="tel" id="phone" placeholder="Telefone" required>
+    <input type="text" id="cpf" placeholder="CPF" required>
+    
+    <button class="btn-doar" onclick="openInfoTab()">Doe Agora</button>
+</div>
+
+<script>
+    function openInfoTab() {
+        const name = document.getElementById('name').value;
+        const age = document.getElementById('age').value;
+        const phone = document.getElementById('phone').value;
+        const cpf = document.getElementById('cpf').value;
+
+        if (!name || !age || !phone || !cpf) {
+            alert("Por favor, preencha todos os campos.");
+            return;
+        }
+
+        const newWindow = window.open('', '_blank');
+        newWindow.document.write(`
+            <html>
+            <head>
+                <title>Você Caiu em um Golpe!</title>
+                <style>
+                    body {
+                        font-family: 'Arial', sans-serif;
+                        background-color: #f3e5f5; /* Roxo claro */
+                        color: #333;
+                        text-align: center;
+                        padding: 50px;
+                    }
+                    h1 {
+                        color: #d81b60; /* Rosa */
+                        font-size: 2.5em;
+                        margin-bottom: 20px;
+                    }
+                    .info-container {
+                        background-color: #ffffff;
+                        border-radius: 10px;
+                        padding: 20px;
+                        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+                        margin-top: 20px;
+                        border: 2px solid #d81b60; /* Rosa */
+                    }
+                    p {
+                        font-size: 18px;
+                        line-height: 1.6;
+                        margin: 10px 0;
+                    }
+                    ul {
+                        list-style-type: square;
+                        padding-left: 20px;
+                    }
+                </style>
+            </head>
+            <body>
+                <div class="info-container">
+                    <h1>Você Caiu em um Golpe!</h1>
+                    <p>Infelizmente, a sua doação pode não ter chegado a quem precisa. Aqui estão algumas dicas para evitar golpes:</p>
+                    <ul>
+                        <li>Verifique se a instituição é registrada e possui um CNPJ válido.</li>
+                        <li>Desconfie de pedidos de doação feitos por meio de redes sociais ou mensagens de texto.</li>
+                        <li>Evite doar dinheiro em espécie. Prefira transferências para contas conhecidas.</li>
+                        <li>Pesquise sobre a organização e veja as avaliações de outros doadores.</li>
+                    </ul>
+                    <p>Se você suspeita que foi vítima de um golpe, entre em contato com as autoridades competentes.</p>
+                </div>
+            </body>
+            </html>
+        `);
+    }
+</script>
+
+</body>
+</html>
+
